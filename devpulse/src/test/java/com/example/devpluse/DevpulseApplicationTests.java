@@ -1,0 +1,13 @@
+package com.example.devpluse;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class DevpulseApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
