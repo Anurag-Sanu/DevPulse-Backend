@@ -2,6 +2,7 @@ package com.example.devpulse.controller;
 
 import com.example.devpulse.entity.Task;
 import com.example.devpulse.service.TaskService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,8 @@ public class TaskController {
 
     // 1. Create Task
     @PostMapping("/{projectId}/tasks")
-    public Task createTask(@PathVariable Long projectId, @RequestBody Task task) {
+    public Task createTask(@PathVariable Long projectId, @Valid @RequestBody Task task) {
+        // The @Valid annotation triggers the "Bouncer" before this code even runs!
         return taskService.createTask(projectId, task);
     }
 
